@@ -1,6 +1,7 @@
 
 library(data.table)
-dt <- read.csv("data.csv", stringsAsFactors = FALSE, fileEncoding = "GBK")
+dt <- read.csv("https://raw.githubusercontent.com/shrektan/temporary/master/data.csv",
+               stringsAsFactors = FALSE, fileEncoding = "GB2312")
 setDT(dt)
 setkey(dt, PL_Type)
 dt[J("公允价值变动损益")]
