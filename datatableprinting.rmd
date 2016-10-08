@@ -1,0 +1,23 @@
+---
+title: "data.table := printing"
+author: "Shrektan"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}                          
+library(rmarkdown)
+library(data.table)              
+DT = data.table(x=1:3, y=4:6)    # should not print  
+DT                               # should print
+DT[, z := 7:9]                   # should not print
+print(DT[, z := 10:12])          # should print
+```
+
+```{r}
+sessionInfo()
+devtools::session_info()
+```
